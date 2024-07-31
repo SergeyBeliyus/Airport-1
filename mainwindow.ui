@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>402</width>
+    <height>546</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>381</width>
+      <height>291</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_getList">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>470</y>
+      <width>171</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Получить расписание</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_showLoad">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>470</y>
+      <width>199</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Отобразить загруженность</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="status">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>510</y>
+      <width>381</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>381</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Выбор аэропорта и направления полетов</string>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>40</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Аэропорт:</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="de_date">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>80</y>
+       <width>199</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="maximumDate">
+      <date>
+       <year>2017</year>
+       <month>9</month>
+       <day>14</day>
+      </date>
+     </property>
+     <property name="minimumDate">
+      <date>
+       <year>2016</year>
+       <month>5</month>
+       <day>15</day>
+      </date>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>80</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Дата:</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rb_departure">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>120</y>
+       <width>91</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Вылет</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cb_airports">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>199</width>
+       <height>28</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rb_arrival">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>120</y>
+       <width>101</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Прилёт</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>groupBox</zorder>
+   <zorder>tableView</zorder>
+   <zorder>btn_getList</zorder>
+   <zorder>btn_showLoad</zorder>
+   <zorder>status</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>402</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
