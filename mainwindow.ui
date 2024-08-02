@@ -111,6 +111,9 @@
        <day>15</day>
       </date>
      </property>
+     <property name="displayFormat">
+      <string>MM/dd/yyyy</string>
+     </property>
     </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
