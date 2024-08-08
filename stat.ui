@@ -6,86 +6,99 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>580</width>
-    <height>448</height>
+    <width>577</width>
+    <height>392</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="btn_close">
+  <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>392</y>
-     <width>539</width>
-     <height>29</height>
+     <x>10</x>
+     <y>10</y>
+     <width>551</width>
+     <height>371</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Закрыть</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="airportsLoad">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>13</y>
-     <width>539</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Загруженность аэропорта </string>
-   </property>
-  </widget>
-  <widget class="QTabWidget" name="tabWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>40</y>
-     <width>539</width>
-     <height>345</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>330</width>
-     <height>250</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>330</width>
-     <height>250</height>
-    </size>
-   </property>
-   <property name="currentIndex">
-    <number>1</number>
-   </property>
-   <widget class="QWidget" name="tb_month">
-    <attribute name="title">
-     <string>За месяц</string>
-    </attribute>
-    <layout class="QGridLayout" name="gridLayout_3">
-     <item row="0" column="0">
-      <widget class="QComboBox" name="months"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QCustomPlot" name="loadPerMonth" native="true"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="tb_year">
-    <attribute name="title">
-     <string>За год</string>
-    </attribute>
-    <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0">
-      <widget class="QCustomPlot" name="loadPerYear" native="true"/>
-     </item>
-    </layout>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <widget class="QLabel" name="airportsLoad">
+        <property name="text">
+         <string>Загруженность аэропорта </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="minimumSize">
+         <size>
+          <width>330</width>
+          <height>250</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>330</width>
+          <height>250</height>
+         </size>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tb_month">
+         <attribute name="title">
+          <string>За месяц</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="1" column="1">
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QComboBox" name="months"/>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
+                 <widget class="QCustomPlot" name="loadPerMonth" native="true"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tb_year">
+         <attribute name="title">
+          <string>За год</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QCustomPlot" name="loadPerYear" native="true"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="btn_close">
+      <property name="text">
+       <string>Закрыть</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <customwidgets>

@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->status->setText("Не подключен к базе данных");
     ui->status->setStyleSheet("color:red");
-    ui->groupBox->setEnabled(false);
+    ui->groupBox_2->setEnabled(false);
     ui->statusbar->addWidget(ui->status);
     ui->rb_arrival->setChecked(true);
     ui->centralwidget->setWindowTitle("Расписание");
@@ -66,7 +66,7 @@ void MainWindow::RcvSignalConnectToDB(bool status)
         ui->status->setText("Подключено к БД");
         ui->status->setStyleSheet("color:green");
         ui->statusbar->addWidget(ui->status);
-        ui->groupBox->setEnabled(true);
+        ui->groupBox_2->setEnabled(true);
         sw->Stop();
     }
     else
@@ -89,7 +89,7 @@ void MainWindow::RcvSignalGetAirportList(QSqlQueryModel *model)
 {
     for(int i = 0; i < model->rowCount(); ++i)
     {
-        ui->cb_airports->addItem(model->data(model->index(i,0)).toString());
+        ui->cb_airport->addItem(model->data(model->index(i,0)).toString());
         Airports[model->data(model->index(i,0)).toString()] = model->data(model->index(i,1)).toString();
     }
 
@@ -97,8 +97,8 @@ void MainWindow::RcvSignalGetAirportList(QSqlQueryModel *model)
 
 void MainWindow::on_btn_getList_clicked()
 {
-    QString airportCode = Airports[ui->cb_airports->currentText()];
-    QString date = ui->de_date->text();
+    QString airportCode = Airports[ui->cb_airport->currentText()];
+    QString date = ui->de_dates->text();
     if(ui->rb_arrival->isChecked())
     {
         dataBase->getArrivals(airportCode, date);
@@ -117,11 +117,11 @@ void MainWindow::RcvSignalQueryDB(QSqlQueryModel *model)
 void MainWindow::on_btn_showLoad_clicked()
 {
     ui->centralwidget->setEnabled(false);
-    QString airportCode = ui->cb_airports->currentText() +
-                          " (" + Airports[ui->cb_airports->currentText()] + ")";
+    QString airportCode = ui->cb_airport->currentText() +
+                          " (" + Airports[ui->cb_airport->currentText()] + ")";
     statistics->setAirportText(airportCode);
-    dataBase->getDataPerYear(Airports[ui->cb_airports->currentText()]);
-    dataBase->getDataPerMonth(Airports[ui->cb_airports->currentText()]);
+    dataBase->getDataPerYear(Airports[ui->cb_airport->currentText()]);
+    dataBase->getDataPerMonth(Airports[ui->cb_airport->currentText()]);
     statistics->show();
 }
 
